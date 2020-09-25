@@ -4,6 +4,8 @@
     then sorts the array in ascending order."""
 
 def max_heapify(a,i,n):
+    # Maintains max heap condition using input array a and node i
+    # n is the length of the array a
     lar = i
     l = (2*i)+1
     r = (2*i)+2
@@ -16,10 +18,12 @@ def max_heapify(a,i,n):
         max_heapify(a,lar,n)
 
 def build_max_heap(a,n):
+    # Builds a max heap out of given input array a
     for i in range(n//2-1,-1,-1):
         max_heapify(a,i,n)
 
 def heapsort(a,n):
+    # Sorts the max heap in ascending order
     build_max_heap(a,n)
     for i in range(n-1,0,-1):
         a[0],a[i] = a[i],a[0]
