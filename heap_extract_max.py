@@ -1,8 +1,10 @@
 """ This is an algorithm to
-    extract the largest value from the
+    extract the largest node from the
     max heap i.e root node."""
 
 def max_heapify(a,i,n):
+    # Maintains max heap condition using input array a and node i
+    # n is the length of the array a
     lar = i
     l = (2*i)+1
     r = (2*i)+2
@@ -15,11 +17,13 @@ def max_heapify(a,i,n):
         max_heapify(a,lar,n)
 
 def build_max_heap(a,n):
+    # Builds a max heap out of given input array a
     for i in range(n//2-1,-1,-1):
         max_heapify(a,i,n)
     return a
 
 def heap_extract_max(a,n):
+    # Extracts the largest node from the max heap
     build_max_heap(a,n)
     if n < 0:
         print('Heap underflow..')
