@@ -2,7 +2,9 @@
     This builds the heap in such a way that the root node of the heap
     is the largest element from the given array."""
 
-def max_heapify(a,i,n):
+def max_heapify(a,i,n): 
+    # Maintains max heap condition using input array a and node i
+    # n is the length of the array a
     lar = i
     l = (2*i)+1
     r = (2*i)+2
@@ -15,6 +17,7 @@ def max_heapify(a,i,n):
         max_heapify(a,lar,n)
 
 def build_max_heap(a,n):
+    # Builds a max heap out of given input array a
     for i in range(n//2-1,-1,-1):
         max_heapify(a,i,n)
     return a
