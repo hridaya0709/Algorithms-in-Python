@@ -3,6 +3,8 @@
     condition."""
 
 def max_heapify(a,i,n):
+    # Maintains max heap condition using input array a and node i
+    # n is the length of the array a
     lar = i
     l = (2*i)+1
     r = (2*i)+2
@@ -15,14 +17,17 @@ def max_heapify(a,i,n):
         max_heapify(a,lar,n)
 
 def build_max_heap(a,n):
+    # Builds a max heap out of given input array a
     for i in range(n//2-1,-1,-1):
         max_heapify(a,i,n)
     print('The old max heap with the last node having key 0 is: ',a)
 
 def parent(i):
+    # Finds the parent node of node i
     return i//2
 
 def heap_increase_key(a,i,n,k):
+    # Increases the key value i to the value k
     build_max_heap(a,n)
     if k < 0:
         print('New key is smaller..')
@@ -36,6 +41,7 @@ def heap_increase_key(a,i,n,k):
 
 
 def max_heap_insert(a,n,k):
+    # Inserts the key k into the heap maintaining the max heap property.
     n += 1
     a.append(0)
     heap_increase_key(a,n,n,k)
