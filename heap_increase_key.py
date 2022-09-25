@@ -30,10 +30,10 @@ def heap_increase_key(a,i,n,k):
     # Increase the key value i to the given value k
     build_max_heap(a,n)
     print('Max heap is: ',a)
-    if k < 0:
+    if k < a[i]: # if new key is less than previous key instead of non-zero
         print('New key is smaller..')
     else:
-        a[i] += k
+        a[i] = k # the new key replaced the old key to 
         while i > 1 and a[parent(i)] < a[i]:
             a[i],a[parent(i)] = a[parent(i)],a[i]
             i = parent(i)
@@ -44,7 +44,7 @@ n = int(input('Enter the no. of elements u want in an array: '))
 for i in range(1,n+1):
     a.append(int(input('Enter the element to be added in the array: ')))
 i = int(input('Enter the index you wanna increase the key: '))
-k = int(input('Enter the key you wanna increase the value at index ' + str(i) + ': '))
+k = int(input('Enter the key you wanna in+=crease the value at index ' + str(i) + ': '))
 a = heap_increase_key(a,i,n,k)
 if a != None:
     print('The new max heap is: ',a)
